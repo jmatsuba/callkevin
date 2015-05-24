@@ -1,0 +1,8 @@
+<form class="form-inline" action="vote" method = "post">
+  <input type="hidden" name="song_id" value="<%= song.id %>">
+  <input type="hidden" name="value" value="1">
+  <a onclick = "this.parentNode.submit()" href='#'>upvote</a>
+</form>
+
+## code top be in the index.erb
+##<%= erb :upvote_link, locals: {song: song} %>
