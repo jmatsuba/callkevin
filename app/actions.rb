@@ -11,15 +11,6 @@ get '/?' do
   erb :'index'
 end
 
-
-get '/register/?' do
-  erb :'register'
-end
-
-get '/login/?' do
-  erb :'login'
-end
-
 get '/logout/?' do
   session[:auth_user] = ''
   redirect '/'
@@ -30,13 +21,12 @@ post '/register' do
     email: params[:email],
     password: params[:password],
     handle:  params[:handle],
-    url:  params[:url]
   )
   if @user.save
     session[:auth_user] = @user.id
     redirect '/'
   else
-    erb :'register'
+    erb :'index'
   end
 end
 
@@ -73,7 +63,7 @@ post '/login' do
     session[:handle] = user_query.handle
     redirect '/'
   else
-    erb :'login'
+    erb :'index'
   end
 end
 

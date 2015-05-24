@@ -1,13 +1,77 @@
-<!-- Modal -->
-<div class="modal fade" id="request" tabindex="-1" role="dialog" aria-labelledby="requestmodel" aria-hidden="true">
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h4 class="modal-title" id="requestmodel">Request Form</h4>
-    </div>
-    <div class="modal-body">
+    <!-- LOGIN MODAL -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" value="Login" class="btn btn-primary"></input>
 
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Create User MODAL -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="/register">
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label>Create a Cool Handle </label>
+            <input type="text" class="form-control" name="handle" placeholder="Enter handle">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" value="submit" class="btn btn-primary"></input>
+
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Request Modal -->
+
+
+<div class="modal fade" id="request" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Request Form</h4>
+      </div>
+      <div class="modal-body">
         <form class="form-horizontal" method="post" action="/kevinrequest/new">
         <div class="form-group">
           <label for="SongName" class="col-sm-2 control-label">Issue Title</label>
@@ -18,7 +82,7 @@
         <div class="form-group">
           <label for="Artist" class="col-sm-2 control-label">Issue Description</label>
           <div class="col-sm-10">
-            <input type="textarea" class="form-control"  placeholder="Jody pushed changes and everything is fucked, how do we fix it? make it better kevin" name="issue_desc" >
+            <input type="textarea" class="form-control"  placeholder="Jody pushed stuff, everything is fucked, how do we fix it? make it better kevin" name="issue_desc" >
           </div>
         </div>
         <div class="form-group">
@@ -27,9 +91,14 @@
             <input type="text" class="form-control" placeholder="A beer? Sexual Favors?"  name="incentive">
           </div>
         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" value="submit" class="btn btn-primary"></input>
+
+      </form>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-      <input type="submit" value="submit" class="btn btn-primary"></input>
-      </form>   
-    </div>
+  </div>
+</div>
+
