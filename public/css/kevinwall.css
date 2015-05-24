@@ -165,3 +165,16 @@ hr.small {
 .form-inline {
     display:inline;
 }
+
+.kev-img-container {
+    text-align: right;
+}
+#kev-pic {
+    border: 1px solid white;
+    border-radius: 3px;
+    background: white;
+    width: 150px;
+    height: 150px;
+    padding:2px;
+    margin:30px;
+}
