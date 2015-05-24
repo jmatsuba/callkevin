@@ -1,8 +1,70 @@
-<% @kevinrequests.each do |request| %>
-    ID: <%= request.id %> <br>
-    Requester: <%= request.user_name %> <br>
-    Title: <%= request.title %> <br>
-    Description <%= request.description %> <br>
-    Incentive <%= request.incentive %> <br>
-    <br>
-<% end %>
+    <%= erb :navbar %>
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>View Request History</h1>
+            <h3>This should be good.</h3>
+            <br>
+
+            
+            <a href="#requests" class="btn btn-dark btn-lg" >View Submitted Requests</a>
+        </div>
+    </header>
+
+    <section id="requests" class="requests">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <% @kevinrequests.each do |request| %>
+                    ID: <%= request.id %> <br>
+                    Requester: <%= request.user_name %> <br>
+                    Title: <%= request.title %> <br>
+                    Description: <%= request.description %> <br>
+                    Incentive: <%= request.incentive %> <br>
+                    Time Created: <%= request.created_at %> <br>
+                    <br>
+                  <% end %>
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <%= erb :lotsa_whitespace %>
+
+    <%= erb :modals %>
+
+
+
+    <!-- Custom JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
