@@ -1,9 +1,0 @@
-<% @kevinrequests.each do |request| %>
-  <div class="requests list-group">
-    <a href="/requests/<%= request.id %>" class="list-group-item">
-    <h3 class="list-group-item-heading"><%= request.name %></h3>
-    <p class="list-group-item-text"><small>(by: <%= request.description %>)</small></p>
-    <p class="list-group-item-text"><%= request.incentive %></p>
-    </a>
-  </div>
-<% end %>

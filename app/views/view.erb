@@ -1,0 +1,8 @@
+<% @kevinrequests.each do |request| %>
+    ID: <%= request.id %> <br>
+    Requester: <%= request.user_name %> <br>
+    Title: <%= request.title %> <br>
+    Description <%= request.description %> <br>
+    Incentive <%= request.incentive %> <br>
+    <br>
+<% end %>

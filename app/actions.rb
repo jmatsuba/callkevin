@@ -1,8 +1,6 @@
 # Homepage (Root path)
 enable :sessions
 
-
-
 helpers do
   def user_logged_in?
     session[:auth_user] && session[:auth_user] != ''
@@ -13,23 +11,10 @@ get '/?' do
   erb :'index'
 end
 
-get '/logout/?' do
-  session[:auth_user] = ''
+get '/logout' do
+  session.clear
   redirect '/'
 end
-
-
-get '/email' do
-  email do
-    from "mailer@callkevin.ca"
-    to "james.matsuba@gmail.com"
-    subject "Welcome!"
-    body render('email/registered')
-    via :sendmail
-  end
-end
-
-
 
 post '/register' do
   @user = User.new(
@@ -45,19 +30,25 @@ post '/register' do
   end
 end
 
-get '/kevinrequest/?' do
+get '/view' do
   @kevinrequests = KevinRequest.all
+  erb :'view'
+end
+
+
+get '/kevinrequest/?' do
   erb :'success'
 end
 
 post '/kevinrequest/new' do
   @kevinrequest = KevinRequest.new(
-    name: params[:issue_title],
+    user_name: params[:name],
+    title: params[:issue_title],
     description: params[:issue_desc],
     incentive:  params[:incentive],
   )
   if @kevinrequest.save
-     erb :'sendit'
+    erb :'success'
   else
     erb :'index'
   end
