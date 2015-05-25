@@ -27,10 +27,10 @@
                         </tr>
                         <% @kevinrequests.each do |request| %>
                         <tr> 
-                            <td><%= request.id %></td> 
-                            <td><%= request.created_at %></td>
+                            <td class="id"><%= request.id %></td> 
+                            <td class="timeStamp"><%= request.created_at %></td>
                             <td><%= request.user_name %></td>
-                            <td><%= request.title %></td>
+                            <td class="title"><%= request.title %></td>
                             <td><%= request.description %></td>
                             <td><%= request.incentive %></td>
                         </tr>

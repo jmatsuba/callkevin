@@ -178,3 +178,15 @@ hr.small {
     padding:2px;
     margin:30px;
 }
+
+.id {
+    width: 20px;
+}
+
+.timeStamp {
+    width: 190px;
+}
+
+.title {
+    width: 100px;
+}
