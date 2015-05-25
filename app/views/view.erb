@@ -14,24 +14,34 @@
     <section id="requests" class="requests">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                <% @kevinrequests.each do |request| %>
-                    ID: <%= request.id %> <br>
-                    Requester: <%= request.user_name %> <br>
-                    Title: <%= request.title %> <br>
-                    Description: <%= request.description %> <br>
-                    Incentive: <%= request.incentive %> <br>
-                    Time Created: <%= request.created_at %> <br>
-                    <br>
-                  <% end %>
-
+                <div class="col-lg-12">
+                <br><br>
+                    <table class="table table-hover">
+                        <tr> 
+                            <th>ID:</th> 
+                            <th>Time Created (UTC)</th>
+                            <th>Requestor</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Incentive</th>
+                        </tr>
+                        <% @kevinrequests.each do |request| %>
+                        <tr> 
+                            <td><%= request.id %></td> 
+                            <td><%= request.created_at %></td>
+                            <td><%= request.user_name %></td>
+                            <td><%= request.title %></td>
+                            <td><%= request.description %></td>
+                            <td><%= request.incentive %></td>
+                        </tr>
+                        <% end %>
+                    </table>
                 </div>
             </div>
             <!-- /.row -->
         </div>
         <!-- /.container -->
     </section>
-    <%= erb :lotsa_whitespace %>
 
     <%= erb :modals %>
 
