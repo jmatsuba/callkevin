@@ -35,6 +35,11 @@ get '/view' do
   erb :'view'
 end
 
+get '/wrongpassword/?' do
+  erb :'wrongpassword'
+end
+
+
 
 get '/kevinrequest/?' do
   erb :'success'
